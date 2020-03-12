@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd backend && node index.js",
-    "heroku-postbuild": "concurrently \"cd backend && npm install && node index.js\" \"cd pin-assignment && npm install && npm run build\""
+    "start": "concurrently \"cd backend && node index.js\" \"cd pin-assignment && npm start\"",
+    "heroku-postbuild": "cd pin-assignment && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
   }
 }
