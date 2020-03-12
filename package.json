@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cd backend && node index.js",
-    "heroku-postbuild": "concurrently \"cd backend && npm install && node index.js\" \" d pin-assignment && npm install && npm run build\""
+    "heroku-postbuild": "concurrently \"cd backend && npm install && node index.js\" \"cd pin-assignment && npm install && npm run build\""
   },
   "keywords": [],
   "author": "",
