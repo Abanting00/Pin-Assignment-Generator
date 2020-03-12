@@ -1,0 +1,199 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-color: #DADFEC;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* New Stuff */
+
+.ssd-margin {
+  margin-left: 50px;
+}
+
+.button-led {
+  margin-left: 20px;
+}
+
+.pin-form {
+  margin: 5px 10px 25px 10px;
+}
+
+.icon {
+  opacity: .5;
+}
+
+div.icon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.active {
+  opacity: 1;
+}
+
+.button-switch {
+  height: 7vmin;
+}
+
+.ssd {
+  height: 7vmin;
+}
+
+.led {
+  height: 7vmin;
+}
+
+.center {
+  width: 80vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.board-bg {
+  background-color: #343A40;
+  padding: 5%;
+  border-radius: 5px;
+  border: solid 10px #898989;
+}
+
+.board-name {
+  font-family: Stencil;
+  color: white;
+  font-size: 150px;
+  margin-bottom: 20px;
+}
+
+.icon-button {
+  opacity: .7;
+}
+
+a.icon-button:hover {
+  opacity: 1;
+}
+
+.icon-trash {
+  justify-content: end;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .board-name {
+    font-size: 10px;
+  }
+  .button-switch {
+    height: 2.5vmin;
+  }
+
+  .ssd {
+    height: 4vmin;
+  }
+
+  .led {
+    height: 2.5vmin;
+  }
+
+  .justify-content-md-center {
+    justify-content: center!important;
+}
+
+  .board-bg {
+    background-color: #343A40;
+    padding: 5%;
+    border-radius: 5px;
+    border: solid 5px #898989;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .board-name {
+    font-size: 30px;
+  }
+
+  .button-switch {
+    height: 2.5vw;
+  }
+
+  .ssd {
+    height: 4vw;
+  }
+
+  .led {
+    height: 2.5vw;
+  }
+
+  .justify-content-md-center {
+    justify-content: center!important;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .board-name {
+    font-size: 30px;
+  }
+
+  .button-switch {
+    height: 2.5vw;
+  }
+
+  .ssd {
+    height: 4vw;
+  }
+
+  .led {
+    height: 2.5vw;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+  .button-switch {
+    height: 3vw;
+  }
+
+  .ssd {
+    height: 5vw;
+  }
+
+  .led {
+    height: 3vw;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+  .board-name {
+    font-size: 40px;
+  }
+  .button-switch {
+    height: 3vw;
+  }
+
+  .ssd {
+    height: 5vw;
+  }
+
+  .led {
+    height: 3vw;
+  }
+}
