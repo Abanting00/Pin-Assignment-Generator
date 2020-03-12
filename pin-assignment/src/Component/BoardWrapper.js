@@ -65,7 +65,9 @@ class BoardWrapper extends Component {
     render() {
         return (
             <div>
-                <Button outline color="info" onClick={this.onDownload}>Download Pin Assignment</Button>
+                <Button  onClick={this.onDownload} size="sm">Download Pin Assignment <img height="25" width="25" src={require("../Icons/download.png")} /></Button>
+                {/* <Button color="info" onClick={this.onDownload}>Download Pin Assignment</Button> */}
+
                 <Board name="De2" removePins={this.removePins} updatePins={this.updatePins}/>
             </div>
         )
