@@ -5,12 +5,7 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
+  Button,
   NavbarText
 } from 'reactstrap';
 
@@ -27,7 +22,9 @@ const NavH = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          <NavbarText>
+              {props.isDe2 ? <Button onClick={props.onSwitch}>Switch to De1-SoC</Button> :  <Button onClick={props.onSwitch}>Switch to De2</Button>}
+            </NavbarText>
         </Collapse>
       </Navbar>
     </div>

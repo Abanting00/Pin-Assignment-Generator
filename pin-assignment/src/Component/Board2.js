@@ -27,20 +27,18 @@ const GetIconCol = (props) => {
     ));    
 }
 
-class Board extends Component {
+class Board2 extends Component {
 
     render() {
-        let cName = this.props.isDe2 ? "" : "hidden";
-
         return (
             <div className="board-bg">    
                 <Container fluid={true}>
                     <Row className="justify-content-md-center">
-                         <h1 className="board-name">Altera {this.props.name} Board</h1>
+                         <h1 className="board-name">{this.props.name} Board</h1>
                     </Row>
 
                     <Row>
-                        <div className="ssd-margin" className={cName}>
+                        <div className="ssd-margin">
                            <GetIconCol 
                                 xs="auto" 
                                 pinsFromFile={this.props.pinsFromFile}
@@ -74,7 +72,7 @@ class Board extends Component {
                                 updatePins={this.props.updatePins}
                                 removePins={this.props.removePins} 
                                 num_col = {1} 
-                                num_icon = {4} 
+                                num_icon = {2} 
                                 icon_name={ssd} 
                                 name="HEX" 
                                 tag="ssd" 
@@ -89,12 +87,12 @@ class Board extends Component {
                             updatePins={this.props.updatePins}
                             removePins={this.props.removePins} 
                             num_col = {1} 
-                            num_icon = {this.props.isDe2 ? 18: 10} 
+                            num_icon = {10} 
                             icon_name={ledr} 
                             name="LEDR" 
                             tag={"led"}/>
-
-                        <div className={`button-led ${cName}`}>
+                        
+                        <div className="button-led" className="hidden">
                             <GetIconCol 
                                 xs="auto"
                                 pinsFromFile={this.props.pinsFromFile} 
@@ -105,7 +103,7 @@ class Board extends Component {
                                 icon_name={ledg} 
                                 name ="LEDG" 
                                 tag={"led"}/>
-                        </div>
+                        </div>   
                     </Row>
                     
                     <Row className="justify-content-md-center">
@@ -115,7 +113,7 @@ class Board extends Component {
                             updatePins={this.props.updatePins}
                             removePins={this.props.removePins} 
                             num_col = {1} 
-                            num_icon = {this.props.isDe2 ? 18: 10} 
+                            num_icon = {10} 
                             icon_name={switchl} 
                             name="SW" 
                             tag={"button-switch"}/>
@@ -139,4 +137,4 @@ class Board extends Component {
     }
 };
 
-export default Board;
+export default Board2;

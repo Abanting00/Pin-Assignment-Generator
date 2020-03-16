@@ -12,6 +12,21 @@ export const pinToText = (pins) => {
     return pinText;
 }
 
+export const textToPin = (text) => {
+	let pins = text.split('\n').slice(1);
+	let result = {}
+
+	pins.forEach(pin => {
+		if(!(pin in [undefined, null, 0, "", "\n"])){
+			pin = pin.split(',');
+			if(pin.length == 2)
+				result[pin[1].trim()] = pin[0].trim();
+		}
+	});
+
+	return result;
+}
+
 export const Logout = () => {
 	localStorage.removeItem('user');
 }

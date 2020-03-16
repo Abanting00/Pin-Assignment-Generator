@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import { Button, CustomInput } from 'reactstrap';
 import Board from './Board';
-import { pinToText } from './Helper';
+import Board2 from './Board2';
+import { pinToText, textToPin } from './Helper';
 
 class BoardWrapper extends Component {
 
@@ -9,13 +10,23 @@ class BoardWrapper extends Component {
         super(props);
 
         this.state = {
-            pins: {}
+            pins: {},
+            pinsFromFile: null
         }
 
         this.updatePins = this.updatePins.bind(this);
         this.removePins = this.removePins.bind(this);
         this.onDownload = this.onDownload.bind(this);
+        this.onFileUpload = this.onFileUpload.bind(this);
     }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.isDe2 !== prevProps.isDe2) {
+            this.setState({
+                pinsFromFile: this.state.pins
+            })
+        }
+      }
 
     updatePins(pinName, pinValue){
         this.setState(prevState => {
@@ -35,6 +46,25 @@ class BoardWrapper extends Component {
           })
         
         console.log("removed pin");
+    }
+
+    onFileUpload(e) {
+        let file = e.target.files[0];
+
+        if(file.name.split('.')[1] != 'txt'){
+            alert("Invalid File please upload text file.")
+        }else{
+            let fileReader = new FileReader();
+            fileReader.onloadend = (e) => {
+                let pins = textToPin(e.target.result);
+                
+                this.setState({
+                    pinsFromFile: pins
+                })
+              };
+
+            fileReader.readAsText(file);
+        }
     }
 
     onDownload(){
@@ -65,10 +95,13 @@ class BoardWrapper extends Component {
     render() {
         return (
             <div>
+                 {/* <Alert color="danger" className={`show ${}`}> */}
+                    {/* This is a danger alert with <a href="#" className="alert-link">an example link</a>. Give it a click if you like.
+                </Alert> */}
                 <Button  onClick={this.onDownload} size="sm">Download Pin Assignment <img height="25" width="25" src={require("../Icons/download.png")} /></Button>
-                {/* <Button color="info" onClick={this.onDownload}>Download Pin Assignment</Button> */}
+                <CustomInput type="file" name="file" id="file" onChange={this.onFileUpload} />
 
-                <Board name="De2" removePins={this.removePins} updatePins={this.updatePins}/>
+                {<Board name={`${this.props.isDe2 ? "De2" : "De1-SoC"}`} isDe2={this.props.isDe2} pinsFromFile={this.state.pinsFromFile} removePins={this.removePins} updatePins={this.updatePins}/>}
             </div>
         )
     }

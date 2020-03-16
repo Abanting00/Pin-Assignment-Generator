@@ -66,6 +66,14 @@ div.icon:hover {
   transform: translate(-50%, -50%);
 }
 
+.center2 {
+  width: 50vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .board-bg {
   background-color: #343A40;
   padding: 5%;
@@ -90,6 +98,10 @@ a.icon-button:hover {
 
 .icon-trash {
   justify-content: end;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 /* Extra small devices (phones, 600px and down) */

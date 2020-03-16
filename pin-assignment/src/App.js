@@ -1,15 +1,11 @@
 import React from 'react';
 import './App.css';
-import NavH from './Component/NavH';
-import BoardWrapper from './Component/BoardWrapper';
+import AppWrapper from './Component/AppWrapper';
 
 function App() {
   return (
     <div className="App">
-      <NavH/>
-      <div className="center">
-        <BoardWrapper/>
-      </div>
+      <AppWrapper />
     </div>
   );
 }
