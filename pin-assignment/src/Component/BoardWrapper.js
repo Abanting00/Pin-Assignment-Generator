@@ -78,7 +78,7 @@ class BoardWrapper extends Component {
 			body: JSON.stringify(data)
 		}
 
-		fetch('http://localhost:8000/api/download', reqOptions)
+		fetch('/api/download', reqOptions)
           .then((response) => response.blob())
           .then((blob) => {
             const url = window.URL.createObjectURL(new Blob([blob]));
